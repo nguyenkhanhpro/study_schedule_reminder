@@ -119,3 +119,89 @@ flowchart TD
 | Khách hàng (Customer) | Ông Nguyễn Tùng Khánh | Ứng dụng đơn giản, hỗ trợ học tập hiệu quả |
 | Người học (End User) | Sinh viên | Xem lịch nhanh, có nhắc nhở, dễ sử dụng |
 | Nhóm phát triển | Nhóm sinh viên / Dev | Hoàn thành đúng thời gian, dễ triển khai |
+
+## 8. Ràng buộc và giả định
+
+### Ràng buộc:
+- Ứng dụng được phát triển bằng Flutter (mobile).
+- Dữ liệu lưu trữ cục bộ bằng SQLite (offline).
+- Không sử dụng server hoặc hệ thống backend trong giai đoạn đầu.
+- Thời gian phát triển: **2–4 tuần**.
+
+### Giả định:
+- Người dùng sử dụng ứng dụng trên thiết bị cá nhân (điện thoại).
+- Mỗi người dùng tự quản lý lịch học của mình.
+- Số lượng lịch học không lớn (dưới 100 mục).
+- Không yêu cầu bảo mật cao (ứng dụng cá nhân).
+
+---
+
+## 9. Tiêu chí nghiệm thu (Acceptance Criteria)
+
+| Mã | Tiêu chí | Phương pháp kiểm tra |
+|----|---------|---------------------|
+| AC-01 | Đăng nhập thành công | Nhập đúng thông tin → vào hệ thống |
+| AC-02 | Từ chối đăng nhập sai | Nhập sai → hiển thị lỗi |
+| AC-03 | Thêm lịch học | Thêm → hiển thị trong danh sách |
+| AC-04 | Hiển thị lịch hôm nay | Đúng ngày → hiển thị đúng dữ liệu |
+| AC-05 | Sắp xếp lịch theo giờ | Danh sách hiển thị theo thứ tự tăng dần |
+| AC-06 | Sửa / Xóa lịch học | Thao tác → dữ liệu cập nhật đúng |
+| AC-07 | Nhắc nhở hoạt động | Trước giờ học → có notification |
+| AC-08 | Tìm kiếm môn học | Nhập từ khóa → lọc đúng kết quả |
+| AC-09 | Dữ liệu cá nhân | Không hiển thị dữ liệu người khác |
+| AC-10 | Giao diện dễ sử dụng | Người dùng thao tác dễ dàng |
+
+---
+
+## 10. Lịch trình mong muốn
+
+| Giai đoạn | Thời gian | Sản phẩm |
+|-----------|----------|---------|
+| Phân tích yêu cầu | Tuần 1 | Tài liệu BRD |
+| Thiết kế & Phát triển | Tuần 2–3 | Ứng dụng Flutter |
+| Kiểm thử | Tuần 4 | Hoàn thiện và sửa lỗi |
+| Bàn giao | Cuối tuần 4 | Ứng dụng hoàn chỉnh |
+
+---
+
+## 11. Ghi chú triển khai hệ thống
+
+### 11.1 Tổng quan kỹ thuật
+
+- Hệ thống được xây dựng dưới dạng ứng dụng di động.
+- Dữ liệu được lưu trữ trực tiếp trên thiết bị của người dùng.
+- Ứng dụng hoạt động độc lập, không yêu cầu kết nối internet.
+
+---
+
+### 11.2 Nguyên tắc thiết kế
+
+- Giao diện đơn giản, dễ sử dụng.
+- Tối ưu tốc độ truy cập và hiển thị dữ liệu.
+- Đảm bảo dữ liệu cá nhân của người dùng không bị chia sẻ.
+
+---
+
+### 11.3 Yêu cầu hệ thống
+
+- Thiết bị chạy Android (phiên bản phổ biến).
+- Cho phép gửi thông báo (notification).
+- Dung lượng lưu trữ đủ để lưu lịch học.
+
+---
+
+### 11.4 Khả năng mở rộng
+
+Trong tương lai, hệ thống có thể mở rộng:
+- Đồng bộ dữ liệu giữa nhiều thiết bị.
+- Tích hợp đăng nhập bằng tài khoản bên thứ ba.
+- Bổ sung thống kê và báo cáo học tập.
+
+---
+
+*Ký duyệt:*
+
+| | Họ tên | Chức vụ | Ngày |
+|---|--------|--------|------|
+| **Người yêu cầu** | Nguyễn Tùng Khánh | Khách hàng | 16/04/2026 |
+| **Người tiếp nhận** | Nguyễn Văn A | Project Manager | 16/04/2026 |
