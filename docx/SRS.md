@@ -238,3 +238,84 @@ CREATE TABLE users (
   password TEXT
 );
 ```
+
+## 9. Luồng xử lý chính
+
+### 9.1. Hiển thị lịch hôm nay
+
+- Lấy ngày hiện tại từ hệ thống:
+  - `current_day = DateTime.now().weekday`
+- Truy vấn dữ liệu:
+  - Lọc danh sách lịch theo `day_of_week = current_day`
+- Sắp xếp:
+  - Theo thời gian tăng dần (`ASC`)
+- Hiển thị:
+  - Danh sách môn học trong ngày
+
+---
+
+### 9.2. Thêm lịch học
+
+- Người dùng nhập:
+  - Tên môn
+  - Thứ
+  - Thời gian
+  - Ghi chú
+- Validate:
+  - Không được để trống
+  - Định dạng thời gian hợp lệ
+- Lưu vào SQLite
+- Cập nhật UI ngay lập tức
+
+---
+
+### 9.3. Notification
+
+- Khi tạo lịch:
+  - Parse thời gian → DateTime
+  - Trừ thời gian nhắc (10–15 phút)
+  - Schedule notification
+- Nội dung:
+  - "Sắp đến giờ học [Tên môn]"
+
+---
+
+### 9.4. CRUD Schedule
+
+- Create → Insert DB
+- Read → Query list
+- Update → Update theo ID
+- Delete → Delete theo ID
+
+---
+
+## 10. Xử lý lỗi
+
+| Trường hợp | Xử lý |
+|-----------|------|
+| Không nhập môn học | Hiển thị thông báo lỗi |
+| Sai định dạng thời gian | Không cho phép submit |
+| Notification bị tắt | Yêu cầu cấp quyền |
+| Lỗi database | Hiển thị thông báo |
+| Không có dữ liệu | Hiển thị "Không có lịch học" |
+
+---
+
+## 11. Bảo mật
+
+- Không chia sẻ dữ liệu giữa người dùng
+- Dữ liệu lưu cục bộ trên thiết bị
+- Mật khẩu nên được mã hóa (hash) (nâng cao)
+- Không expose dữ liệu ra ngoài hệ thống
+- Kiểm soát quyền truy cập dữ liệu theo user
+
+---
+
+## 12. Hướng mở rộng
+
+- Đồng bộ dữ liệu với Firebase
+- Đăng nhập bằng Google / Facebook
+- Thêm giao diện lịch (Calendar view)
+- Thống kê thời gian học
+- Nhắc nhở thông minh (AI)
+- Đồng bộ nhiều thiết bị
