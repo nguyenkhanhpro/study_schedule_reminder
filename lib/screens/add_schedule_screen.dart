@@ -49,10 +49,7 @@ class _AddScheduleScreenState extends State<AddScheduleScreen> {
             _buildTextField('Subject', _subjectController, Icons.book),
 
             const SizedBox(height: 16),
-
-            // Select Section - Dropdown với 3 lựa chọn
             _buildDropdownSection(),
-
             const SizedBox(height: 16),
 
             // Time
@@ -157,7 +154,7 @@ class _AddScheduleScreenState extends State<AddScheduleScreen> {
     }
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('✅ Lưu lịch thành công!')),
+      const SnackBar(content: Text('Lưu lịch thành công!')),
     );
 
     Navigator.pop(context);

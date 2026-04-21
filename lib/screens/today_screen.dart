@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:study_schedule_reminder/models/user.dart';
-import 'add_schedule_screen.dart';   // Import màn hình thêm lịch
+import 'add_schedule_screen.dart'; 
+import '../widgets/event_widget.dart';
 
 class TodayScreen extends StatelessWidget {
   final User user;
@@ -39,7 +40,6 @@ class TodayScreen extends StatelessWidget {
     );
   }
 
-  // ================= NỘI DUNG KHI LÀ NGÀY 19 =================
   Widget _buildTodayContent(BuildContext context) {
     return Column(
       children: [
@@ -88,7 +88,6 @@ class TodayScreen extends StatelessWidget {
     );
   }
 
-  // ================= NỘI DUNG KHI CHỌN NGÀY KHÁC =================
   Widget _buildNoUpdateContent() {
     return Center(
       child: Column(
@@ -110,67 +109,11 @@ class TodayScreen extends StatelessWidget {
       ),
     );
   }
-
-  // ================= CHUYỂN ĐẾN MÀN HÌNH THÊM LỊCH =================
   void _goToAddSchedule(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (_) => AddScheduleScreen(user: user),
-      ),
-    );
-  }
-}
-
-// ================= WIDGET MỖI SỰ KIỆN =================
-class EventTile extends StatelessWidget {
-  final String time;
-  final String title;
-
-  const EventTile({
-    super.key,
-    required this.time,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Chức năng đang được cập nhật...'),
-            duration: Duration(seconds: 1),
-          ),
-        );
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.grey.shade200),
-        ),
-        child: Row(
-          children: [
-            Text(
-              time,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(fontSize: 16),
-              ),
-            ),
-            const Icon(Icons.arrow_forward_ios, size: 18, color: Colors.grey),
-          ],
-        ),
       ),
     );
   }
