@@ -31,14 +31,10 @@ dependencies:
   flutter:
     sdk: flutter
   sqflite: ^2.3.0
-  path: ^1.8.3
-  flutter_local_notifications: ^17.2.3
-  intl: ^0.18.1
-  table_calendar: ^3.0.9
   shared_preferences: ^2.2.2
-  timezone: ^0.9.4
-  provider: ^6.1.2          
   cupertino_icons: ^1.0.8
+  integration_test:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

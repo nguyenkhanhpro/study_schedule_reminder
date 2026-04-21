@@ -44,7 +44,6 @@ Xem prototype tại đây:
 | Framework | Flutter |
 | Ngôn ngữ | Dart |
 | Database | SQLite |
-| Notification | flutter_local_notifications |
 | UI Design | Figma |
 
 ---
