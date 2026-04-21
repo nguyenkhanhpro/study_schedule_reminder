@@ -76,7 +76,10 @@ flutter pub get
 ```bash
 flutter run
 ```
-
+### 4. Sử dụng test
+```bash
+flutter test integration_test
+```
 ### Hướng phát triển
 - Đồng bộ dữ liệu với Firebase
 - Thêm đăng nhập Google
